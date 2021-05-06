@@ -39,4 +39,11 @@ class ViewController: UIViewController {
             timer.invalidate()
         }
     }
+    
+    @IBAction func customizeButtonPressed(_ sender: UIButton) {
+        
+        self.performSegue(withIdentifier: "goToCustomize", sender: self)
+        
+    }
+    
 }
