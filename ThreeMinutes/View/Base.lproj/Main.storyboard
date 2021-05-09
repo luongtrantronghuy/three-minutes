@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ThreeMinutes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="MainController" id="BYZ-38-t0r" customClass="ViewController" customModule="ThreeMinutes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,8 +56,8 @@
                                                 <rect key="frame" x="157" y="273" width="100" height="43"/>
                                                 <color key="backgroundColor" red="0.47058823529411764" green="0.40784313725490196" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="43" id="UQt-TF-9nC"/>
-                                                    <constraint firstAttribute="width" constant="100" id="ZnZ-1c-Yvs"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="43" id="UQt-TF-9nC"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="ZnZ-1c-Yvs"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="17"/>
                                                 <state key="normal" title="Start Task">
@@ -80,24 +80,43 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cSD-Sb-J1Z" userLabel="bottomView">
                                         <rect key="frame" x="0.0" y="624.5" width="414" height="193.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gek-fx-0Xj">
-                                                <rect key="frame" x="147" y="72.5" width="120" height="49"/>
-                                                <color key="backgroundColor" red="0.72156862749999995" green="0.70980392160000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="120" id="2il-jp-eAf"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="20"/>
-                                                <state key="normal" title="Customize">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="customizeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jah-QP-tFZ"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="82" translatesAutoresizingMaskIntoConstraints="NO" id="Lkb-hb-GTC">
+                                                <rect key="frame" x="51" y="77" width="312" height="40"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gek-fx-0Xj">
+                                                        <rect key="frame" x="0.0" y="0.0" width="115" height="40"/>
+                                                        <color key="backgroundColor" red="0.72156862749999995" green="0.70980392160000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="ikf-pC-usT"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="15"/>
+                                                        <state key="normal" title="History">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="historyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jah-QP-tFZ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STz-FW-pM2">
+                                                        <rect key="frame" x="197" y="0.0" width="115" height="40"/>
+                                                        <color key="backgroundColor" red="0.72156862749999995" green="0.70980392160000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="115" id="WA6-EL-UNc"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="15"/>
+                                                        <state key="normal" title="Customize">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="customizeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="57l-wU-WJA"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="Gek-fx-0Xj" firstAttribute="centerY" secondItem="cSD-Sb-J1Z" secondAttribute="centerY" id="8k9-vZ-vJr"/>
-                                            <constraint firstItem="Gek-fx-0Xj" firstAttribute="centerX" secondItem="cSD-Sb-J1Z" secondAttribute="centerX" id="Yq0-Ba-x33"/>
+                                            <constraint firstItem="Lkb-hb-GTC" firstAttribute="centerX" secondItem="cSD-Sb-J1Z" secondAttribute="centerX" id="DXX-DU-OhN"/>
+                                            <constraint firstItem="Lkb-hb-GTC" firstAttribute="centerY" secondItem="cSD-Sb-J1Z" secondAttribute="centerY" id="HCG-1Q-zbD"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -126,20 +145,30 @@
                         <outlet property="actionDisplay" destination="Uug-B6-8Me" id="18w-vG-48e"/>
                         <outlet property="progressBar" destination="mRw-6B-Uoh" id="guT-ik-9cG"/>
                         <outlet property="startButton" destination="yX6-Lq-Mo9" id="Yq7-Ud-tTM"/>
-                        <segue destination="yUN-om-EKn" kind="presentation" identifier="goToCustomize" id="pOW-Nh-6ac"/>
+                        <segue destination="yUN-om-EKn" kind="presentation" identifier="goToHistory" id="pOW-Nh-6ac"/>
+                        <segue destination="bkF-ey-l2G" kind="presentation" identifier="goToCustomize" id="fxe-G5-DIG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28.985507246376812" y="83.705357142857139"/>
+            <point key="canvasLocation" x="39" y="84"/>
         </scene>
-        <!--View Controller-->
+        <!--HistoryController-->
         <scene sceneID="RhH-5H-az4">
             <objects>
-                <viewController id="yUN-om-EKn" sceneMemberID="viewController">
+                <viewController title="HistoryController" id="yUN-om-EKn" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xGj-bh-jaM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gly-CH-K5h">
+                                <rect key="frame" x="55" y="78" width="305" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="rQg-wa-zaB"/>
                         <color key="backgroundColor" red="0.72156862749999995" green="0.70980392160000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -147,6 +176,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Vq-Zo-umY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="845" y="84"/>
+        </scene>
+        <!--CustomizeController-->
+        <scene sceneID="LXJ-0I-x3C">
+            <objects>
+                <viewController title="CustomizeController" id="bkF-ey-l2G" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nlf-LC-9qi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is Customize" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNf-aW-Nl4">
+                                <rect key="frame" x="52" y="105" width="311" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="g4X-Mv-QI7"/>
+                        <color key="backgroundColor" red="0.72156862749999995" green="0.70980392160000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HGM-iD-pxx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="845" y="812"/>
         </scene>
     </scenes>
     <resources>

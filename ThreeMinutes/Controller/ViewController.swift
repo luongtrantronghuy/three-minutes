@@ -40,10 +40,14 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func customizeButtonPressed(_ sender: UIButton) {
+    @IBAction func historyButtonPressed(_ sender: UIButton) {
         
-        self.performSegue(withIdentifier: "goToCustomize", sender: self)
+        self.performSegue(withIdentifier: "goToHistory", sender: self)
         
     }
     
+    @IBAction func customizeButtonPressed(_ sender: UIButton) {
+        
+        self.performSegue(withIdentifier: "goToCustomize", sender: self)
+    }
 }
